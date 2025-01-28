@@ -16,5 +16,9 @@ To run unit tests:
 
 Built with this stuff:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [vite](https://vite.dev/)
+- [create-vite](https://github.com/vitejs/vite/tree/main/packages/create-vite)
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [PostCSS](https://postcss.org/)
+- and some others I probably missed.
