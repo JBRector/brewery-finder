@@ -22,10 +22,16 @@ export interface Brewery {
   state_province: string | null;
   postal_code: string | null;
   country: string | null;
-  longitude: number | null;
-  latitude: number | null;
+  longitude: string | null;
+  latitude: string | null;
   phone: string | null;
   website_url: string | null;
   state: string | null;
   street: string | null;
+}
+
+export interface BreweriesMeta {
+  total: number;
+  page: string;
+  per_page: string;
 }

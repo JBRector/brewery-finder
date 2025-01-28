@@ -1,0 +1,15 @@
+.select {
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    padding: 12px;
+    border: 2px solid light-dark(var(--blue), var(--light));
+    color: var(--black);
+    border-radius: 8px;
+    background-color: var(--white);
+    width: 100%;
+  }
+}

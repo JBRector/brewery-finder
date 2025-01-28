@@ -7,3 +7,13 @@ export async function fetchBreweries(request: FetchBreweriesRequest) {
   console.log(queryString);
   return fetch(`${API_URL}/breweries${queryString}`);
 }
+
+export async function fetchBreweriesMeta(request: FetchBreweriesRequest) {
+  const queryString = convertRequestToQueryString(request);
+  console.log(queryString);
+  return fetch(`${API_URL}/breweries/meta${queryString}`);
+}
+
+export async function fetchBrewery(id: string) {
+  return fetch(`${API_URL}/breweries/${id}`);
+}

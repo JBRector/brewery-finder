@@ -4,7 +4,7 @@ export function queryReducer(
   state: FetchBreweriesRequest,
   action: {
     type: keyof FetchBreweriesRequest;
-    value: string | number | BreweryType | undefined;
+    value?: string | number | BreweryType;
   }
 ): FetchBreweriesRequest {
   switch (action.type) {
@@ -16,6 +16,14 @@ export function queryReducer(
       return { ...state, per_page: action.value as number };
     case 'page':
       return { ...state, page: action.value as number };
+    case 'reset':
+      return {
+        ...state,
+        by_city: '',
+        by_type: undefined,
+        per_page: 200,
+        page: 1,
+      };
     default:
       return state;
   }
