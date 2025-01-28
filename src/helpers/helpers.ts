@@ -1,5 +1,10 @@
 import { Brewery, FetchBreweriesRequest } from '../services/types';
 
+/**
+ * Convert request object to query string
+ * @param request
+ * @returns query string
+ */
 export function convertRequestToQueryString(request: FetchBreweriesRequest) {
   const keys = Object.keys(request);
 
@@ -21,6 +26,9 @@ export function convertRequestToQueryString(request: FetchBreweriesRequest) {
   return `?${query}`;
 }
 
+/**
+ * Functions to set, get, and clear local storage items
+ */
 export function setLocalStorageItem(
   key: string,
   value: Brewery[] | FetchBreweriesRequest
@@ -48,6 +56,11 @@ export function getLocalStorageItem(key: string) {
   return null;
 }
 
+/**
+ * Takes a set of 10 digits and formats it like (614) 555-1212
+ * @param phone
+ * @returns formatted phone number
+ */
 export function formatPhone(phone: string) {
   if (!phone || phone.length !== 10) return phone;
 
