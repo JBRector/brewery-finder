@@ -1,8 +1,11 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+
+import { Loading } from '../components';
+
 import { fetchBrewery } from '../services/breweries';
 import { Brewery } from '../services/types';
-import { useEffect, useState } from 'react';
-import { Loading } from '../components';
+
 import { formatPhone } from '../helpers/helpers';
 
 export default function BreweryDetail() {
@@ -16,8 +19,7 @@ export default function BreweryDetail() {
     setIsLoading(true);
 
     await fetchBrewery(params.breweryId || '')
-      .then((res) => res.json())
-      .then((res: Brewery[]) => {
+      .then((res) => {
         setBreweryData(res);
         console.log(res);
       })

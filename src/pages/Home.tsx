@@ -7,6 +7,7 @@ import { FetchBreweriesRequest, Brewery } from '../services/types';
 import { fetchBreweries } from '../services/breweries';
 
 import { BREWERIES_STORAGE_KEY } from '../constants/storage';
+import { BY_CITY, BY_TYPE, RESET } from '../constants/api';
 
 import { queryReducer } from '../reducers/breweryQuery';
 
@@ -28,8 +29,7 @@ export default function HomePage() {
     clearLocalStorageItem(BREWERIES_STORAGE_KEY);
 
     await fetchBreweries(state)
-      .then((res) => res.json())
-      .then((res: Brewery[]) => {
+      .then((res) => {
         setBreweries(res);
         setLocalStorageItem(BREWERIES_STORAGE_KEY, res);
       })
@@ -44,6 +44,18 @@ export default function HomePage() {
       type: id as keyof FetchBreweriesRequest,
       value: value === 'all' ? undefined : value,
     });
+
+    if (value === 'Columbus') {
+      dispatch({
+        type: 'by_state',
+        value: 'Ohio',
+      });
+    } else if (value === 'Minneapolis') {
+      dispatch({
+        type: 'by_state',
+        value: 'Minnesota',
+      });
+    }
   };
 
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -57,7 +69,7 @@ export default function HomePage() {
     setHasSearched(false);
     clearLocalStorageItem(BREWERIES_STORAGE_KEY);
 
-    dispatch({ type: 'reset' });
+    dispatch({ type: RESET });
   };
 
   useEffect(() => {
@@ -79,15 +91,15 @@ export default function HomePage() {
       <form className="two-col" onSubmit={submitHandler}>
         <Select
           label="Select a City"
-          options={['', 'Columbus', 'Minneapolis', 'Surprise Me']}
-          forValue="by_city"
+          options={['', 'Columbus', 'Minneapolis']}
+          forValue={BY_CITY}
           onChange={changeHandler}
         />
 
         <Select
           label="What type of brewery?"
           options={['all', 'micro', 'nano', 'regional', 'large']}
-          forValue="by_type"
+          forValue={BY_TYPE}
           onChange={changeHandler}
         />
 

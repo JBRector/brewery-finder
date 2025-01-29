@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router';
+
 import { Brewery } from '../../services/types';
 
 interface BreweryListProps {

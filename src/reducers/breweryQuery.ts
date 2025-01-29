@@ -1,22 +1,36 @@
+import {
+  BY_CITY,
+  BY_STATE,
+  BY_TYPE,
+  PAGE,
+  PER_PAGE,
+  RESET,
+} from '../constants/api';
 import { BreweryType, FetchBreweriesRequest } from '../services/types';
 
+export const defaultState: FetchBreweriesRequest = {
+  per_page: 200,
+};
+
 export function queryReducer(
-  state: FetchBreweriesRequest,
+  state: FetchBreweriesRequest = defaultState,
   action: {
     type: keyof FetchBreweriesRequest;
     value?: string | number | BreweryType;
   }
 ): FetchBreweriesRequest {
   switch (action.type) {
-    case 'by_city':
+    case BY_CITY:
       return { ...state, by_city: action.value as string };
-    case 'by_type':
+    case BY_STATE:
+      return { ...state, by_state: action.value as string };
+    case BY_TYPE:
       return { ...state, by_type: action.value as BreweryType };
-    case 'per_page':
+    case PER_PAGE:
       return { ...state, per_page: action.value as number };
-    case 'page':
+    case PAGE:
       return { ...state, page: action.value as number };
-    case 'reset':
+    case RESET:
       return {
         ...state,
         by_city: '',

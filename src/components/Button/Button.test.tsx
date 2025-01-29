@@ -1,7 +1,8 @@
 import { describe, test, vi, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Button } from './Button';
 import userEvent from '@testing-library/user-event';
+
+import { Button } from './Button';
 
 describe('Button Tests', () => {
   test('Fires click handler', async () => {

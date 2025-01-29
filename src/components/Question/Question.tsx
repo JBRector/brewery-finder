@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import styles from './question.module.css';
+
 import jason from '../../assets/jason.png';
 
 export const Question = () => {

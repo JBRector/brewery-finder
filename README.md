@@ -14,6 +14,11 @@ To run on a local server:
 To run unit tests:
 `npm run test`
 
+To build (with typechecker run) and preview locally:
+`npm run build`
+then
+`npm run preview`
+
 Built with this stuff:
 
 - [vite](https://vite.dev/)

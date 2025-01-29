@@ -64,9 +64,6 @@ export function getLocalStorageItem(key: string) {
 export function formatPhone(phone: string) {
   if (!phone || phone.length !== 10) return phone;
 
-  console.log(phone);
-  console.log(phone.substring(3, 5));
-
   return `(${phone.substring(0, 3)}) ${phone.substring(3, 6)}-${phone.substring(
     6
   )}`;

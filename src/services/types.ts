@@ -2,6 +2,7 @@ export type BreweryType = 'micro' | 'nano' | 'regional' | 'large';
 
 export interface FetchBreweriesBase {
   by_city?: string;
+  by_state?: string;
   by_type?: BreweryType;
   per_page?: number;
   page?: number;
