@@ -1,4 +1,11 @@
+/* https://necolas.github.io/normalize.css/ */
 @import 'normalize.css';
+
+/*
+  Nesting possible thanks to
+  PostCSS: https://postcss.org/
+  postcss-nested: https://github.com/postcss/postcss-nested
+*/
 
 :root {
   --dark: #16404d;

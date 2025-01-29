@@ -1,3 +1,4 @@
+// Beer lottie animation: https://lottiefiles.com/free-animation/beer-animation-Uj82boS3Kf
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export const Loading = () => {

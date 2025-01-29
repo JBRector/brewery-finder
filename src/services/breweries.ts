@@ -2,6 +2,9 @@ import { API_URL } from '../constants/api';
 import { convertRequestToQueryString } from '../helpers/helpers';
 import { FetchBreweriesRequest, Brewery } from './types';
 
+/**
+ * Free public API from https://www.openbrewerydb.org/
+ */
 export async function fetchBreweries(
   request: FetchBreweriesRequest
 ): Promise<Brewery[]> {
